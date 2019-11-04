@@ -91,9 +91,9 @@ public class MyLinkedListStack<E> implements Iterable {
     public static void main(String[] args) {
         MyLinkedListStack<String> myStack = new MyLinkedListStack();
 
-        myStack.push("hello Eva");
+        myStack.push("hello jack");
         myStack.push("hello Tom");
-        myStack.push("hello Carrie");
+        myStack.push("hello bob");
 
         System.out.println(myStack);
         System.out.println(myStack.size());

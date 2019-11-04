@@ -47,7 +47,7 @@ public class Test1 {
 //        System.out.println(2/4);
 //        System.out.println(3/4);
 
-//        String[] test = {"hello Tom", "Hello Eva", "Hello Carrie"};
+//        String[] test = {"hello Tom", "Hello jack", "Hello bob"};
 //        int i = 0;
 //        System.out.println(test[++i]);
 //        System.out.println(i);
@@ -57,9 +57,9 @@ public class Test1 {
 
         MyResizingArrayQueue<String> queue = new MyResizingArrayQueue();
         queue.enqueue("Hello xxxx");
-        queue.enqueue("Hello Eva");
+        queue.enqueue("Hello jack");
         queue.enqueue("Hello Tom");
-        queue.enqueue("Hello Carrie");
+        queue.enqueue("Hello bob");
         queue.dequeue();
         Iterator<String> iterator = queue.iterator();
         while(iterator.hasNext()){
@@ -75,7 +75,7 @@ public class Test1 {
 //        String[] a = new String[2];
 //        a[0] = "Hello";
 //        a[1] = "tom";
-//        a[2] = "eva";
+//        a[2] = "jack";
 //        for (String s : a) {
 //            System.out.println(s);
 
