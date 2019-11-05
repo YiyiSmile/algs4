@@ -9,15 +9,16 @@ public class Test1 {
     private String a;
     private ArrayList<String> b;
     private Integer c;
-    private  int d;
+    private int d;
     private boolean e;
     private String[] f = {};
     private String g = "";
     private int h = 5;
 
-    public Test1(){
+    public Test1() {
         getClass().getResource("");
     }
+
     public static void main(String[] args) {
 /*        for(int i=0;i<10;i++){
             Random r = new Random();
@@ -62,14 +63,14 @@ public class Test1 {
         queue.enqueue("Hello bob");
         queue.dequeue();
         Iterator<String> iterator = queue.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
 //            String s = iterator.next();
 //            System.out.println(queue.size());
             System.out.println(iterator.next());
 
         }
         for (String s : queue) {
-            
+
         }
 
 //        String[] a = new String[2];
@@ -80,5 +81,8 @@ public class Test1 {
 //            System.out.println(s);
 
 //        }
+
+
     }
+
 }

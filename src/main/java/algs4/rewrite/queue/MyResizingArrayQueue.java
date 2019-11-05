@@ -89,6 +89,17 @@ public class MyResizingArrayQueue<E> implements Iterable<E> {
 //        }
 //    }
 
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (E e : this) {
+            sb.append(e.toString());
+            sb.append("--");
+        }
+        return sb.toString();
+    }
+
     @Override
     public Iterator<E> iterator() {
         return new MyIterator();
@@ -111,5 +122,18 @@ public class MyResizingArrayQueue<E> implements Iterable<E> {
             return temp;
         }
 
+    }
+
+    public static void main(String[] args) {
+        MyResizingArrayQueue<String> strings = new MyResizingArrayQueue<>();
+        strings.enqueue("dog");
+        strings.enqueue("cat");
+        strings.enqueue("horse");
+        strings.enqueue("mouse");
+
+        for (String string : strings) {
+            System.out.println(string);
+        }
+        System.out.println(strings);
     }
 }
