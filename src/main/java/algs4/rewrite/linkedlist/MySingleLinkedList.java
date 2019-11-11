@@ -95,7 +95,7 @@ class HeroNode {
     public String toString() {
         return "HeroNode{" +
                 "no=" + no +
-                ", name='" + name + '\'' +
+                ", name=' " + name + '\'' +
                 ", nickName='" + nickName + '\'' +
                 '}';
     }
