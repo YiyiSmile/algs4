@@ -41,6 +41,8 @@ public class Maze {
 
         String[] lines = text.split("[\r]?\n");
         maze = new int[lines.length][lines[0].length()];
+        visited = new boolean[lines.length][lines[0].length()];
+
 
         for(int row = 0; row < getHigh(); row++){
             if(lines[row].length()!=getWith())
@@ -99,7 +101,7 @@ public class Maze {
     }
 
     public boolean isValidLocation(int row, int col){
-        if(row >0 && row < getHigh() && col > 0 && col < getWith())
+        if(row >=0 && row < getHigh() && col >= 0 && col < getWith())
             return true;
         return false;
     }
