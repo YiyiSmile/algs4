@@ -1,5 +1,7 @@
 package miscellaneous.sparse_array;
 
+import java.io.*;
+
 /**
  * @Author Tom
  * @Date 2020/6/23 22:03
@@ -7,7 +9,7 @@ package miscellaneous.sparse_array;
  * @Description
  */
 public class SparseArray {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         // create an original 2-dimensional array. 11*11
         //0: no chess piece 1: blue piece 2: black piece
         int chessArray[][] = new int[11][11];
@@ -15,14 +17,28 @@ public class SparseArray {
         chessArray[2][3] = 2;
         chessArray[4][5] = 2;
         //print original array.
-        for (int[] row : chessArray) {
+//        for (int[] row : chessArray) {
+//            for (int data : row) {
+//                System.out.printf("%d\t", data);
+//            }
+//            System.out.println();
+//        }
+        File file1 = new File("src/main/resources/maze/array.txt");
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file1));
+        oos.writeObject(chessArray);
+        oos.close();
+
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file1));
+        int chessArray3[][] = (int[][])ois.readObject();
+
+        for (int[] row : chessArray3) {
             for (int data : row) {
                 System.out.printf("%d\t", data);
             }
             System.out.println();
         }
 
-        //1. traverse the original array, get the total number of element whose value isn't 0.
+       /* //1. traverse the original array, get the total number of element whose value isn't 0.
         int sum = 0;
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
@@ -67,7 +83,7 @@ public class SparseArray {
                 System.out.printf("%d\t", data);
             }
             System.out.println();
-        }
+        }*/
     }
 
 }
