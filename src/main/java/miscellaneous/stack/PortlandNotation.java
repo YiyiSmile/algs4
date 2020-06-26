@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @Author Tom
@@ -34,6 +36,36 @@ public class PortlandNotation {
 
     }
 
+    @Test
+    public void test2(){
+        System.out.println(isNumber("+123.56.2234"));
+    }
+
+    public static boolean isNumber(String s){
+        Pattern pattern = Pattern.compile("^[-\\+]?[.\\d]*$");
+        return pattern.matcher(s).matches();
+//        return s.matches("^[-\\+]?[.\\d]*$");
+    }
+    public static boolean isNumberAll(List<String> list){
+        Pattern pattern = Pattern.compile("^[-\\+]?[.\\d]*$");
+        for (String s : list) {
+            if(!pattern.matcher(s).matches())  return false;
+        }
+        return true;
+    }
+
+    @Test
+    public void test3(){
+        ArrayList<String> list = new ArrayList<>();
+        list.add("aa");
+        list.add("bb");
+        list.add("cc");
+        list.add("dd");
+        System.out.println(list.get(0));
+        System.out.println(list.get(4));
+    }
+
+
 
 
     //convert string infix expression to List<String>
@@ -50,11 +82,15 @@ public class PortlandNotation {
             if (exp.charAt(i) < 48 || exp.charAt(i) > 57) {
                 list.add(exp.charAt(i) + "");
             } else {
-                while (exp.charAt(i) > 48 && exp.charAt(i) < 57) {
+//                while (exp.charAt(i) > 48 && exp.charAt(i) < 57) {
+//                    temp += exp.charAt(i);
+//                    i++;
+//                    if (i == exp.length()) break;
+//                }
+                do {
                     temp += exp.charAt(i);
                     i++;
-                    if (i == exp.length()) break;
-                }
+                }while (exp.charAt(i) > 48 && exp.charAt(i) < 57 && i != exp.length());
                 list.add(temp);
                 i--;
                 temp = "";
